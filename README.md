@@ -1,2 +1,2 @@
 # Greenfoot
-# Dit is mijn repository van Greenfoot
+Dit is mijn repository van Greenfoot
