@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.target=Gnomus
-comment0.text=\n\ Write\ a\ description\ of\ class\ Gnomus\ here.\n\ \n\ @author\ (Dylan\ Eckhart)\ \n\ @version\ (1-11-2020)\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Gnomus\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment1.target=Gnomus()
 comment2.params=
-comment2.target=boolean\ atWorldEdge()
-numComments=3
+comment2.target=void\ act()
+comment3.params=
+comment3.target=boolean\ atWorldEdge()
+comment4.params=
+comment4.target=void\ setRotation()
+numComments=5
