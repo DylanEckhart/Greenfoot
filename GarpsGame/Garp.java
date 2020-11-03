@@ -6,8 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Dylan Eckhart) 
  * @version (1-11-20120)
  */
-public class Garp extends Actor
-{
+public class Garp extends Actor {
     private GreenfootImage imageLeft;
     private GreenfootImage imageRight;
     public Garp() {
@@ -20,29 +19,71 @@ public class Garp extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-    if(Greenfoot.isKeyDown("Right")) {
-        if(getImage() == imageLeft) {
-            setImage(imageRight);
+        movingAndTurning();
+        collectingDiamonds();
+        foundBomb();
+    }
+    protected void collectingDiamonds() {
+        World world;
+        Actor diamond;
+        diamond = getOneObjectAtOffset(0, 0, Diamond.class);
+        if(diamond != null) {
+            world = getWorld();
+            world.removeObject(diamond);
+        }   
+    }
+    protected void movingAndTurning() {
+        if(Greenfoot.isKeyDown("left")) {
+            if(getImage() == imageRight) {
+                setImage(imageLeft);
+            }
+            setRotation(0);
+            move(-5);
         }
-        setRotation(0);
-        move(5);
-    }
-    if(Greenfoot.isKeyDown("Left")) {
-        if(getImage() == imageRight) {
-            setImage(imageLeft);
+        if(Greenfoot.isKeyDown("right")) {
+            if(getImage() == imageLeft) {
+                setImage(imageRight);
+            }
+            setRotation(0);
+            move(5);
         }
-        setRotation(0);
-        move(-5);
+        if(Greenfoot.isKeyDown("up")) {
+            if(getImage() == imageLeft) {
+                setImage(imageRight);
+            }
+            setRotation(-90);
+            move(5);
+        }
+        if(Greenfoot.isKeyDown("down")) {
+            if(getImage() == imageLeft) {
+                setImage(imageRight);
+            }   
+            setRotation(90);
+            move(5);
+        }
+        if (foundRock()) {
+            move(-5);
+        }
     }
-    if(Greenfoot.isKeyDown("Up")) {
-        setRotation(-90);
-        move(5);
+    protected boolean foundRock() {
+        Actor rock;
+        rock = getOneObjectAtOffset(0, 0, Rock.class);
+        if (rock != null) {
+            return true;
+        }
+        return false;
     }
-    if(Greenfoot.isKeyDown("Down")) {
-        setRotation(90);
-        move(5);
+    public void foundBomb() {
+        Actor bomb;
+        bomb = getOneObjectAtOffset(0, 0, Bomb.class);
+        if (bomb != null) {
+            getWorld().removeObject(bomb);
+            getWorld().addObject(new Explosion(), getX(), getY());
+            getWorld().removeObject(this);
+        }
     }
 }
-}
+   
+
     
    

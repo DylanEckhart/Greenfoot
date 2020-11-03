@@ -26,7 +26,7 @@ public class GarpsWorld extends World {
         for (int teller = 0; teller < 10; teller++) {
             addObject(new Diamond(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
         }
-        for (int teller = 0; teller < 16; teller++) {
+        for (int teller = 0; teller < 6; teller++) {
             addObject(new Rock(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
         }
         setPaintOrder(Garp.class, Gnomus.class, Diamond.class, Bomb.class, Rock.class);
