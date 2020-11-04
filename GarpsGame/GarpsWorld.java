@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GarpsWorld extends World {
     private GreenfootSound sound;
+    private EndScore endScore;
     public static int score = 0;
     /**
      * Constructor for objects of class GarpsWorld.
@@ -33,13 +34,16 @@ public class GarpsWorld extends World {
         for (int teller = 0; teller < 6; teller++) {
             addObject(new Rock(), Greenfoot.getRandomNumber(700), Greenfoot.getRandomNumber(500));
         }
-        setPaintOrder(Garp.class, Gnomus.class, Diamond.class, Bomb.class, Rock.class);
+        setPaintOrder(EndScore.class, Garp.class, Gnomus.class, Diamond.class, Bomb.class, Rock.class);
     }
     public void started() {
         sound.playLoop();
+        endScore = new EndScore();
     }
     public void stopped() {
         sound.stop();
         score = 0;
+        this.endScore.setEndImage(this.score);
+        this.addObject(this.endScore, this.getWidth() / 2, this.getHeight() / 2);
     }
 }
