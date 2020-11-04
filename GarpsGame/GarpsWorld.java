@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GarpsWorld extends World {
     private GreenfootSound sound;
+    public static int score = 0;
     /**
      * Constructor for objects of class GarpsWorld.
      * 
@@ -15,6 +16,9 @@ public class GarpsWorld extends World {
     public GarpsWorld() {
         super(700, 500, 1); 
         populateTheWorld();
+    }
+    public void act() {
+        showText("Score: " + score, 50, 470);
     }
     protected void populateTheWorld() {
         addObject(new Garp(), 350, 250);
@@ -36,5 +40,6 @@ public class GarpsWorld extends World {
     }
     public void stopped() {
         sound.stop();
+        score = 0;
     }
 }

@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Garp extends Actor {
     private GreenfootImage imageLeft;
     private GreenfootImage imageRight;
+    GarpsWorld thisGame;
     public Garp() {
         imageLeft = new GreenfootImage("GarpLeft.png");
         imageRight = new GreenfootImage("GarpRight.png");
@@ -30,6 +31,7 @@ public class Garp extends Actor {
         if(diamond != null) {
             world = getWorld();
             world.removeObject(diamond);
+            thisGame.score++;
         }   
     }
     protected void movingAndTurning() {
