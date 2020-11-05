@@ -1,12 +1,10 @@
 #BlueJ class context
 comment0.target=EndScore
-comment0.text=\n\ @author\ (Dylan\ Eckhart)\ \n\ @version\ (05-11-2020)\n
+comment0.text=\n\ @author\ (Dylan\ Eckhart)\ \n\ @version\ (1-11-20120)\n
 comment1.params=
 comment1.target=EndScore()
-comment2.params=score
-comment2.target=void\ setEndImage(int)
+comment2.params=
+comment2.target=void\ setEndImage()
 comment3.params=
 comment3.target=java.lang.String\ getElapsedTime()
-comment4.params=
-comment4.target=void\ act()
-numComments=5
+numComments=4

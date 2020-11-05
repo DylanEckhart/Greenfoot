@@ -1,11 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Garp here.
- * 
  * @author (Dylan Eckhart) 
  * @version (1-11-20120)
- */
+**/
+
 public class Garp extends Actor {
     private GreenfootImage imageLeft;
     private GreenfootImage imageRight;
@@ -32,6 +31,9 @@ public class Garp extends Actor {
             world = getWorld();
             world.removeObject(diamond);
             thisGame.score++;
+            if (thisGame.score == 10) {
+                Greenfoot.stop();
+            }
         }   
     }
     protected void movingAndTurning() {
